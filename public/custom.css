@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+:root {
+    --gradient-01: linear-gradient(90deg, #121836 0%, #5F349C 100%);
+    --gradient-02: linear-gradient(90deg, #6B1FD926 0%, #5E329C26 100%);
+    --gradient-03: linear-gradient(90deg, #6D1CE1 0%, #5E339A 100%);
+    --color-01: #FFFFFF;
+    --color-02: #171434;
+    --color-03: #221E4B;
+    --color-04: #4D4D4D;
+    --font-family: 'Inter';
+    --font-size-01: 28px;
+    --font-size-02: 21px;
+    --font-size-03: 16px;
+    --font-weight: 600;
+    --gap-01: 20px;
+    --gap-02: clamp(10px, 5%, 20px);
+    --margin: 30px;
+    --border: 1px solid var(--color-01);
+    --radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-01);
+    font-family: var(--font-family);
+}
+
+header {
+    height: 80px;
+    background: var(--gradient-01);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--margin);
+}
+
+header>nav {
+    display: flex;
+    align-items: center;
+    gap: var(--margin);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: inherit;
+    font-size: var(--font-size-02);
+}
+
+.nav-large {
+    font-size: var(--font-size-01);
+}
+
+.menu-profile {
+    gap: var(--gap-01);
+}
+
+.menu-profile>div {
+    height: 42px;
+    aspect-ratio: 1/1;
+}
+
+.panel {
+    margin: var(--margin);
+}
+
+.panel-top {
+    height: 100%;
+    width: 100%;
+    background: var(--color-02);
+    padding: var(--gap-01);
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr) 4fr repeat(2, 1fr);
+    align-items: center;
+    gap: var(--gap-02);
+}
+
+.options>.dropdown {
+    font-weight: var(--font-weight);
+}
+
+.status {
+    height: 55px;
+    width: 100%;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status>svg {
+    height: 35px;
+    width: 35px;
+}
+
+.status>p {
+    font-weight: var(--font-weight);
+    font-size: var(--font-size-03);
+}
+
+.high {
+    background: radial-gradient(50% 50% at 50% 50%, #F00000 0%, #B62A2A 100%);
+}
+
+.mid {
+    background: radial-gradient(50% 50% at 50% 50%, #E8D306 0%, #B59929 100%);
+}
+
+.low {
+    background: radial-gradient(50% 50% at 50% 50%, #1DEA06 0%, #29B53A 100%);
+}
+
+.search-bar {
+    height: 100%;
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--gradient-02);
+    position: relative;
+}
+
+.search-bar>svg {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.search-bar>input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: var(--radius);
+    outline: none;
+    background: transparent;
+    font-size: var(--font-size-03);
+    padding: 0 15px 0 55px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.button {
+    height: 100%;
+    border-radius: var(--radius);
+    background: var(--gradient-03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-03);
+    gap: var(--gap-02);
+}
+
+.button>svg {
+    height: 30px;
+    width: 30px;
+}
+
+.datatable>thead {
+    height: 45px;
+    background: var(--color-03);
+}
