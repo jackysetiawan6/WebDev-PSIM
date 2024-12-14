@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter_18pt-Regular.ttf') format('truetype');
+    src: url('fonts/Inter_18pt-Medium.ttf') format('truetype');
 }
 
 :root {
@@ -11,15 +11,19 @@
     --color-02: #171434;
     --color-03: #221E4B;
     --color-04: #4D4D4D;
-    --font-family: 'Inter';
+    --color-05: #6B1FD9;
+    --font-family-01: 'Inter';
+    --font-family-02: 'Arial', sans-serif;
     --font-size-01: 28px;
     --font-size-02: 21px;
     --font-size-03: 16px;
     --font-weight: 600;
     --gap-01: 20px;
     --gap-02: clamp(10px, 5%, 20px);
+    --gap-03: 10px;
     --margin: 30px;
-    --border: 1px solid var(--color-01);
+    --border-01: 1px solid var(--color-01);
+    --border-02: 1px solid var(--color-04);
     --radius: 10px;
 }
 
@@ -28,7 +32,7 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--color-01);
-    font-family: var(--font-family);
+    font-family: var(--font-family-02);
 }
 
 header {
@@ -108,7 +112,7 @@ header>nav {
     background: radial-gradient(50% 50% at 50% 50%, #F00000 0%, #B62A2A 100%);
 }
 
-.mid {
+.medium {
     background: radial-gradient(50% 50% at 50% 50%, #E8D306 0%, #B59929 100%);
 }
 
@@ -118,7 +122,7 @@ header>nav {
 
 .search-bar {
     height: 100%;
-    border: var(--border);
+    border: var(--border-01);
     border-radius: var(--radius);
     background: var(--gradient-02);
     position: relative;
@@ -167,4 +171,106 @@ header>nav {
 .datatable>thead {
     height: 45px;
     background: var(--color-03);
+}
+
+.datatable>tbody>tr {
+    background: #0E0A1D;
+    border-bottom: var(--border-02);
+}
+
+.prio-circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.col-high {
+    background: #FF03001A;
+}
+
+.col-high>.prio-circle {
+    background: #BB1C1A;
+}
+
+.col-high>p {
+    color: #E70008;
+}
+
+.col-medium {
+    background: #FF8A001A;
+}
+
+.col-medium>.prio-circle {
+    background: #B97422;
+}
+
+.col-medium>p {
+    color: #D46C00;
+}
+
+.col-low {
+    background: #00FF891A;
+}
+
+.col-low>.prio-circle {
+    background: #14BA6D;
+}
+
+.col-low>p {
+    color: #00B86B;
+}
+
+.panel-bottom>.dt-container>.dt-paging {
+    display: flex;
+    justify-content: end;
+    margin: var(--margin) 0;
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-03);
+    user-select: none;
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button:focus-visible {
+    outline: none;
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button:not(.disabled) {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    background-image: linear-gradient(#000000, #000000), var(--gradient-03);
+    background-origin: border-box;
+    border-radius: 50%;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+    font-weight: bold !important;
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button.disabled {
+    display: none;
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button:hover {
+    background-image: linear-gradient(#000000, #000000), var(--gradient-03);
+    background-origin: border-box;
+    border-radius: 50%;
+    background-clip: content-box, border-box;
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button.first,
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button.previous,
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button.next,
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button.last {
+    height: 40px;
+    width: 40px;
+    font-size: var(--font-size-02) !important;
+    fill: var(--color-01);
+}
+
+.panel-bottom>.dt-container>.dt-paging>nav>.dt-paging-button.current {
+    background-image: var(--gradient-03);
 }

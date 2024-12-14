@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('dashboard');
+Route::controller(EventController::class)->group(function () {
+    Route::get('/', 'index')->name('dashboard');
 });
