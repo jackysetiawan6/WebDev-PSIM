@@ -3,10 +3,11 @@
 @section('title', 'Physical Security Incident Management')
 
 @section('content')
-    <div class="panel">
+    @include('animations.eyes')
+    <div class="panel" style="display: none;">
         @include('components.panel')
         <div class="panel-bottom">
-            <table class="datatable" id="datatable" style="width: 100%">
+            <table class="datatable" id="datatable" style="width: 100%;">
                 <thead>
                     <tr>
                         <th>Event ID</th>
@@ -23,9 +24,9 @@
                     @foreach ($events as $event)
                         <tr>
                             <td>EV-{{ $event->event_id }}</td>
-                            <td>{{ $event->incident_id ? $event->incident_id : '-' }}</td>
+                            <td>{{ $event->incident_id ? 'INC-' + $event->incident_id : '-' }}</td>
                             <td>{{ $event->created_at }}</td>
-                            <td>{{ $event->source }}</td>
+                            <td>{{ $event->source->name }}</td>
                             <td>{{ $event->name }}</td>
                             <td>{{ $event->remarks }}</td>
                             <td>

@@ -19,13 +19,13 @@ class EventSeeder extends Seeder
         for ($i = 1; $i <= 2153; $i++) {
             $events[] = [
                 'event_id' => $faker->numberBetween(1000000, 9999999),
-                'source' => $faker->word,
+                'source_id' => $faker->numberBetween(1, 7),
                 'name' => $faker->name,
                 'remarks' => 'Stranger',
                 'priority' => $faker->randomElement(['low', 'medium', 'high']),
                 'incident_owner' => $faker->name,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => $faker->dateTimeBetween('-1 years', 'now'),
+                'updated_at' => $faker->dateTimeBetween('-1 months', 'now'),
             ];
         }
 

@@ -12,6 +12,7 @@
     --color-03: #221E4B;
     --color-04: #4D4D4D;
     --color-05: #6B1FD9;
+    --color-06: #0E0A1D;
     --font-family-01: 'Inter';
     --font-family-02: 'Arial', sans-serif;
     --font-size-01: 28px;
@@ -35,6 +36,10 @@
     font-family: var(--font-family-02);
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     height: 80px;
     background: var(--gradient-01);
@@ -48,6 +53,19 @@ header>nav {
     display: flex;
     align-items: center;
     gap: var(--margin);
+}
+
+.logo {
+    height: 40px;
+}
+
+table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-date {
+    text-align: left;
+}
+
+table.dataTable tbody tr:hover {
+    background: var(--color-06);
 }
 
 .nav-item {
@@ -74,13 +92,13 @@ header>nav {
 }
 
 .panel-top {
-    height: 100%;
+    height: 95px;
     width: 100%;
     background: var(--color-02);
     padding: var(--gap-01);
     border-radius: var(--radius) var(--radius) 0 0;
     display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr) 4fr repeat(2, 1fr);
+    grid-template-columns: 2fr repeat(3, 1fr) 1fr 4fr 1fr;
     align-items: center;
     gap: var(--gap-02);
 }
@@ -219,6 +237,10 @@ header>nav {
 
 .col-low>p {
     color: #00B86B;
+}
+
+.panel-bottom {
+    position: relative;
 }
 
 .panel-bottom>.dt-container>.dt-paging {

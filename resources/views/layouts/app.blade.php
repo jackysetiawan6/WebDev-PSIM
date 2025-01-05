@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('bootstrap-5.3.3-dist/dataTables.dataTables.css') }}">
     <link rel="stylesheet" href="{{ asset('custom.css') }}">
+    <link rel="shortcut icon" href="{{ asset('logo.svg') }}" type="image/x-icon">
     <title>@yield('title')</title>
 </head>
 

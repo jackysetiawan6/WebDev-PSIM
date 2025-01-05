@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Incident;
-use App\Http\Requests\StoreIncidentRequest;
-use App\Http\Requests\UpdateIncidentRequest;
+use App\Models\Location;
+use App\Http\Requests\StoreLocationRequest;
+use App\Http\Requests\UpdateLocationRequest;
 
-class IncidentController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $incidents = Incident::all();
-        return view('incident', compact('incidents'));
+        //
     }
 
     /**
@@ -28,7 +27,7 @@ class IncidentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreIncidentRequest $request)
+    public function store(StoreLocationRequest $request)
     {
         //
     }
@@ -36,7 +35,7 @@ class IncidentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Incident $incident)
+    public function show(Location $location)
     {
         //
     }
@@ -44,7 +43,7 @@ class IncidentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Incident $incident)
+    public function edit(Location $location)
     {
         //
     }
@@ -52,7 +51,7 @@ class IncidentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateIncidentRequest $request, Incident $incident)
+    public function update(UpdateLocationRequest $request, Location $location)
     {
         //
     }
@@ -60,7 +59,7 @@ class IncidentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Incident $incident)
+    public function destroy(Location $location)
     {
         //
     }

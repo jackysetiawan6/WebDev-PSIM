@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->unsignedBigInteger('event_id')->autoIncrement();
             $table->unsignedBigInteger('incident_id')->nullable();
-            $table->string('source');
+            $table->unsignedBigInteger('source_id');
             $table->string('name');
             $table->string('remarks');
             $table->enum('priority', ['low', 'medium', 'high']);
             $table->string('incident_owner')->nullable();
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('source_id')->references('id')->on('sources');
         });
     }
 
